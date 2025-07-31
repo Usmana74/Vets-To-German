@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vets to German - Professional German Language Training</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Master German with expert tutors. Professional German language training for A1 & A2 levels in Pakistan.">
+  
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #1a365d;
+      --secondary-color: #2b77ad;
+      --accent-color: #e53e3e;
+      --text-dark: #2d3748;
+      --text-light: #718096;
+      --bg-light: #f7fafc;
+      --gradient-primary: linear-gradient(135deg, #1a365d 0%, #2b77ad 100%);
+      --shadow-soft: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      --shadow-medium: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background-color: #ffffff;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: rgba(26, 54, 93, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+      padding: 1rem 0;
+    }
+
+    .navbar.scrolled {
+      background: rgba(26, 54, 93, 0.98);
+      padding: 0.5rem 0;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #fff !important;
+      text-decoration: none;
+    }
+
+    .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background: #fff;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 80%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('pexels-pavel-danilyuk-8761328.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(26, 54, 93, 0.7) 0%, rgba(43, 119, 173, 0.6) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .lead {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-hero {
+      background: var(--gradient-primary);
+      border: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-hero:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-medium);
+      color: white;
+    }
+
+    /* Floating Stats */
+    .stats-floating {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: 3rem;
+    }
+
+    .stat-item {
+      text-align: center;
+      color: white;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 6rem 0;
+      background: var(--bg-light);
+    }
+
+    .feature-card {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      transition: all 0.3s ease;
+      height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 2rem;
+      color: white;
+    }
+
+    /* Tutors Section */
+    .tutors {
+      padding: 6rem 0;
+    }
+
+    .tutor-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .tutor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .tutor-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tutor-image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .tutor-card:hover .tutor-image img {
+      transform: scale(1.05);
+    }
+
+    .tutor-content {
+      padding: 2rem;
+    }
+
+    .tutor-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    .tutor-qualification {
+      color: var(--accent-color);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    /* Story Section */
+    .story {
+      padding: 6rem 0;
+      background: var(--bg-light);
+    }
+
+    .story-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 3rem;
+    }
+
+    .story-content {
+      padding: 3rem;
+    }
+
+    .story-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: var(--primary-color);
+    }
+
+    .story-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 6rem 0;
+      background: white;
+    }
+
+    .contact-card {
+      background: var(--bg-light);
+      padding: 3rem;
+      border-radius: 20px;
+      height: 100%;
+      text-align: center;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: var(--gradient-primary);
+      padding: 5rem 0;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--primary-color);
+      color: white;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-content {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h5 {
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero .lead {
+        font-size: 1.2rem;
+      }
+      
+      .stats-floating {
+        position: static;
+        transform: none;
+        margin-top: 3rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .cta h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <i class="fas fa-graduation-cap me-2"></i>
+      Vets to German
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="#tutors" class="nav-link">Tutors</a></li>
+        <li class="nav-item"><a href="#story" class="nav-link">Our Story</a></li>
+        <li class="nav-item">
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <h1 class="display-4">Master New Language with Confidence</span></h1>
+    <p class="lead">Join our expert-led tutoring sessions and take your language skills to the next level — whether you're preparing for exams, travel, or personal growth</p>
+    <a href="https://forms.gle/QYKVkspPboytHk2b9" class="btn-hero" target="_blank">
+      <i class="fas fa-rocket me-2"></i>
+      Join Our Classes
+    </a>
+  </div>
+  
+  <div class="stats-floating">
+    <div class="stat-item">
+      <span class="stat-number">100+</span>
+      <span class="stat-label">Students Trained</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">95%</span>
+      <span class="stat-label">Success Rate</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">1+</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">Why Learn with Us?</h2>
+      <p class="lead text-muted">Learn from fellow vets who've been through the same journey you're about to start</p>
+    </div>
+    
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-user-md"></i>
+          </div>
+          <h4 class="mb-3">Vet-to-Vet Learning</h4>
+          <p class="text-muted">Learn from veterinary students who understand the specific challenges and requirements for working in Germany.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h4 class="mb-3">Real Experience</h4>
+          <p class="text-muted">Get insights from students who successfully navigated the German language requirements and are now working in Germany.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h4 class="mb-3">Flexible Timing</h4>
+          <p class="text-muted">Evening and weekend sessions designed for working professionals and students with busy schedules.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-laptop"></i>
+          </div>
+          <h4 class="mb-3">Online Classes</h4>
+          <p class="text-muted">Join from anywhere in Pakistan with interactive online sessions and study materials.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h4 class="mb-3">A1 & A2 Focus</h4>
+          <p class="text-muted">Concentrated preparation for A1 and A2 levels - the foundation you need for your German journey.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-rupee-sign"></i>
+          </div>
+          <h4 class="mb-3">Affordable Rates</h4>
+          <p class="text-muted">Student-friendly pricing because we understand the financial challenges of pursuing education abroad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tutors Section -->
+<section id="tutors" class="tutors">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">Meet Your Mentors</h2>
+      <p class="lead text-muted">Founded by passionate educators, our mission is to make language learning both accessible and effective. What started as a small group of tutors helping local students has now grown into a diverse, global community of learners.</p>
+    </div>
+    
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-5 col-md-6">
+        <div class="tutor-card">
+          <div class="tutor-image">
+            <img src="WhatsApp Image 2025-07-31 at 17.58.12_300c3201.jpg" alt="Mohsin Haseeb">
+          </div>
+          <div class="tutor-content">
+            <h4 class="tutor-name">Dr. Mohsin Haseeb</h4>
+            <p class="tutor-qualification">Veterinary TFA in Germany</p>
+            <p class="text-muted">Successfully cleared German A1 and A2 levels from Pakistan and is now pursuing veterinary studies in Germany. A licensed veterinarian with over a year of clinical experience, Dr. Mohsin brings the precision of medical practice into the world of language learning. Fluent in English, German, and Urdu, he specializes in teaching scientific and medical German to students pursuing careers in diverse fields.</p>
+            <div class="mt-3">
+              <span class="badge bg-primary me-2">A1/A2 Expert</span>
+              <span class="badge bg-secondary me-2">Vet Student</span>
+              <span class="badge bg-success">Currently in Germany</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-5 col-md-6">
+        <div class="tutor-card">
+          <div class="tutor-image">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jawad Ahmad">
+          </div>
+          <div class="tutor-content">
+            <h4 class="tutor-name">Dr. Jawad Ahmad</h4>
+            <p class="tutor-qualification">Veterinary Student in Germany</p>
+            <p class="text-muted">Passed German language exams from Pakistan and is now working as a veterinary professional in Germany.With a veterinary degree and years of professional practice, Dr. Jawad understands the challenges of learning a new language while building a career. Fluent in German, English, and Urdu, he specializes in conversational and workplace language for professionals aiming to settle or work in Germany.</p>
+            <div class="mt-3">
+              <span class="badge bg-primary me-2">A1/A2 Expert</span>
+              <span class="badge bg-secondary me-2">Practical Tips</span>
+              <span class="badge bg-success">Working in Germany</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Story Section -->
+<section id="story" class="story">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">Our Story</h2>
+      <p class="lead text-muted">From passionate learners to dedicated mentors</p>
+    </div>
+    
+    <div class="story-card">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-6">
+          <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" class="img-fluid" alt="Our Journey">
+        </div>
+        <div class="col-md-6">
+          <div class="story-content">
+            <h3 class="story-title">Our Journey Together</h3>
+            <p class="story-text"> What began as a shared passion for science and communication has evolved into a powerful language-learning community. As qualified veterinarians who have studied and worked across borders, we understand firsthand how language can open doors—academically, professionally, and personally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="story-card">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-6 order-md-2">
+          <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" class="img-fluid" alt="Our Mission">
+        </div>
+        <div class="col-md-6 order-md-1">
+          <div class="story-content">
+            <h3 class="story-title">Why We Teach</h3>
+            <p class="story-text">Because we've lived it — the struggle to express ourselves in a new language, the fear of sounding "wrong," and the joy of finally being understood.As doctors and educators who once had to learn German and English for our careers, we know that language is more than grammar. It's identity, confidence, and opportunity.
+    </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready to Start Your German Journey?</h2>
+    <p>Join hundreds of students who have successfully learned German with our expert guidance</p>
+    <a href="https://forms.gle/QYKVkspPboytHk2b9" class="btn-hero" target="_blank">
+      <i class="fas fa-graduation-cap me-2"></i>
+      Enroll Today
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5><i class="fas fa-graduation-cap me-2"></i>Vets to German</h5>
+            <p class="text-muted">Empowering veterinary professionals to achieve their dreams in Germany through expert language training.</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://wa.me/923068684851" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i>
+</a>
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#tutors">Tutors</a></li>
+              <li><a href="#story">Our Story</a></li>
+            </ul>
+          </div>
+        </div>
+        
+<div class="col-lg-3 col-md-6 mb-4">
+  <div class="footer-section">
+    <h5>Why Choose Us</h5>
+    <ul class="footer-links">
+      <li>Focused on German Language</li>
+      <li>Flexible Timings</li>
+      <li>Affordable Fees</li>
+      <li>One-on-One Sessions</li>
+      <li>Certificate on Completion</li>
+    </ul>
+  </div>
+</div>
+
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="footer-section">
+            <h5>Contact Info</h5>
+            <ul class="footer-links">
+              <li><i class="fas fa-envelope me-2"></i>vethaseeb78@gmail.com</li>
+              <li><i class="fas fa-phone me-2"></i>+92 306 8684851</li>
+              <li><i class="fas fa-map-marker-alt me-2"></i>Rawalpindi, Pakistan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center">
+      <p class="mb-0">&copy; 2025 Vets to German. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS CDN -->
